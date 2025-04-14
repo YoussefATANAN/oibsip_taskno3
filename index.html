@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature-converter</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h4>Temperature converter</h4>
+
+      <div>
+        <!-- Div of enter degree value -->
+        <div class="degree">
+          <label for="degree">Degrees</label>
+          <!-- this input accept only numeric value -->
+          <input
+            type="text"
+            id="degree"
+            name="degree"
+            oninput="this.value = this.value.replace(/[^-?\d.]/g, '');"
+          />
+        </div>
+
+        <!-- Determine the degree unit -->
+        <div class="type">
+          <label for="type">Type</label>
+          <select id="type" name="type">
+            <option disabled selected value>-- select an unit --</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Determine the degree the user prefers to convert to -->
+      <div class="convert-to">
+        <label for="convert-to">Convert to :</label>
+        <select id="convert-to" name="convert-to">
+          <option disabled selected value>-- select an unit --</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="celsius">Celsius</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+      </div>
+
+      <!-- Show result -->
+      <div class="result">
+        <label for="result">Result</label>
+        <input id="result" name="result" readonly />
+      </div>
+
+      <button id="convert">Convert</button>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
